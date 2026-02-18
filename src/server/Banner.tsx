@@ -1,5 +1,3 @@
-import { Button } from "../client/Button";
-
 export function Banner() {
   return (
     <div>
