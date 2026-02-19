@@ -14,8 +14,8 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsup src/index.ts --dts --format esm --clean",
-    "dev": "tsup src/index.ts --dts --format esm --watch"
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "peerDependencies": {
     "react": "^18 || ^19",
