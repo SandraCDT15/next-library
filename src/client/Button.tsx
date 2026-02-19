@@ -1,13 +1,17 @@
 "use client";
 
-import { useState } from "react";
-
-export function Button({ children }: { children: React.ReactNode }) {
-  const [clicked, setClicked] = useState(false);
-
+export function Button({
+  action,
+  title,
+  active,
+}: {
+  action: string;
+  title: string;
+  active: boolean;
+}) {
   return (
-    <button onClick={() => setClicked(true)}>
-      {clicked ? "Clicked!" : children}
+    <button disabled={!active} onClick={() => console.log(action)}>
+      {title}
     </button>
   );
 }

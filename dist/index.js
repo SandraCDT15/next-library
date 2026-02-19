@@ -1,15 +1,26 @@
 // src/client/Button.tsx
-import { useState } from "react";
 import { jsx } from "react/jsx-runtime";
-function Button({ children }) {
-  const [clicked, setClicked] = useState(false);
-  return /* @__PURE__ */ jsx("button", { onClick: () => setClicked(true), children: clicked ? "Clicked!" : children });
+function Button({
+  action,
+  title,
+  active
+}) {
+  return /* @__PURE__ */ jsx("button", { disabled: !active, onClick: () => console.log(action), children: title });
 }
 
 // src/server/Banner.tsx
-import { jsx as jsx2 } from "react/jsx-runtime";
-function Banner() {
-  return /* @__PURE__ */ jsx2("div", { children: /* @__PURE__ */ jsx2("h2", { children: "Hola" }) });
+import { jsx as jsx2, jsxs } from "react/jsx-runtime";
+function Banner({
+  title,
+  description,
+  backgroundColor,
+  children
+}) {
+  return /* @__PURE__ */ jsxs("div", { style: { backgroundColor }, children: [
+    /* @__PURE__ */ jsx2("h1", { children: title }),
+    /* @__PURE__ */ jsx2("p", { children: description }),
+    children
+  ] });
 }
 export {
   Banner,
